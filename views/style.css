@@ -1,0 +1,97 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(34, 40, 49); /* dark charcoal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.main {
+  background-color: rgb(57, 62, 70); /* slate gray */
+  border: 2px solid rgba(27, 99, 182, 0.5); /* teal accent */
+  padding: 10px 40px;
+  box-shadow: 2.5px 2.5px 12px rgb(20, 20, 20);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  animation: popIn 1.5s ease-out forwards;
+  font-size: 1rem;
+  color: #eeeeee; /* light text for contrast */
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#button {
+  background-color: rgb(0, 173, 181); /* teal */
+  font-size: 1.2rem;
+  padding: 6px 14px;
+  border: 2px solid rgb(27, 38, 49); /* dark navy border */
+  border-radius: 5px;
+  box-shadow: 0.8px 0.8px 4px rgb(10, 10, 10);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: white;
+  font-weight: bold;
+}
+#button:hover {
+  transform: scale(1.05);
+  background-color: rgb(0, 130, 138); /* darker teal */
+}
+#button:active {
+  opacity: 0.6;
+}
+
+input {
+  padding-left: 4%;
+  padding-top: 0.9%;
+  padding-bottom: 0.9%;
+  margin: 2%;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0.2px 0.2px 2px rgb(15, 15, 15);
+  background-color: #222831; /* dark input field */
+  color: #eeeeee;
+}
+
+label {
+  color: #eeeeee;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h1 {
+  background: linear-gradient(
+    45deg,
+    rgb(42, 79, 98),
+    rgb(47, 82, 117),
+    rgb(34, 40, 49)
+  );
+  padding: 5px 50px;
+  border-radius: 5px;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #eeeeee;
+}
+
+td,
+th {
+  padding: 10px 20px;
+  color: #eeeeee;
+}

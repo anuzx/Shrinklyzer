@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="sign.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="sub-main1">
+        <h1>Welcome to our platform</h1>
+        <h1>Shortify !!</h1>
+      </div>
+      <div id="sub-main2">
+        <div id="sign">
+          <h1>Create your account</h1>
+        </div>
+
+        <div id="form">
+          <form class="form-row" method="POST" action="/user">
+            <div class="sign-page">
+              <label class="label">Full Name:</label>
+              <input class="block" type="text" required name="name" />
+            </div>
+            <div class="sign-page">
+              <label class="label">Email:</label>
+              <input class="block" type="text" required name="email" />
+            </div>
+            <div class="sign-page">
+              <label class="label">Password:</label>
+              <input class="block" type="password" required name="password" />
+            </div>
+            <button class="button" type="submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
