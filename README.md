@@ -17,8 +17,6 @@ Includes **stateless authentication** to keep your links secure and user session
 
 ## 🖼️ Screenshots
 
-> Add your screenshots here to showcase the project. For example:
-
 ### Homepage
 ![Homepage Screenshot](docs/images/homepage.png)
 
@@ -27,8 +25,6 @@ Includes **stateless authentication** to keep your links secure and user session
 
 ### Authentication
 ![Authentication Screenshot](docs/images/auth.png)
-
-*(You can create a `docs/images/` folder in your repo and place screenshots there.)*
 
 ---
 
