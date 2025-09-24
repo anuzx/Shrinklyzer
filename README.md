@@ -18,13 +18,16 @@ Includes **stateless authentication** to keep your links secure and user session
 ## 🖼️ Screenshots
 
 ### Homepage
-![Homepage Screenshot](docs/images/homepage.png)
+<img width="1660" height="892" alt="image" src="https://github.com/user-attachments/assets/9a9d2c38-0a5d-455d-9c99-69bab07beb1c" />
 
-### Shortened URL Page
-![Shortened URL Screenshot](docs/images/short-url.png)
+
+### URL Shortener Page
+<img width="1157" height="807" alt="image" src="https://github.com/user-attachments/assets/eccbf968-4268-4bdb-be51-529f049c926e" />
+
 
 ### Authentication
-![Authentication Screenshot](docs/images/auth.png)
+<img width="1620" height="870" alt="image" src="https://github.com/user-attachments/assets/1d68eb8c-ba3d-47bc-acb5-5270b406584a" />
+
 
 ---
 
