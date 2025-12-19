@@ -1,6 +1,5 @@
-const User = require("../models/user");
-const { v4: uuidv4 } = require("uuid");
-const { setUser } = require("../service/auth");
+import {User} from "../models/user.js";
+import { setUser } from "../service/auth.js";
 
 //signup
 
@@ -34,7 +33,7 @@ async function handleUserLogin(req, res) {
   
 }
 
-module.exports = {
+export{
   handleUserSignup,
   handleUserLogin,
 };

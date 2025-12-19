@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const URL = require("../models/url");
-const { restrictTo } = require("../middlewares/auth");
+import {URL} from "../models/url.js";
+import { restrictTo } from "../middlewares/auth.js";
 
 
 router.get("/admin/urls", restrictTo(['ADMIN']) , async (req, res) => {
@@ -31,4 +31,4 @@ router.get("/login", (req, res) => {
   return res.render("login");
 });
 
-module.exports = router;
+export default router;

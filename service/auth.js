@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const secret = "ariseurl11@7";
+import jwt from "jsonwebtoken";
+const secret = process.env.JWT_SECRET;
 
 function setUser(user) {
   return jwt.sign(
@@ -21,7 +21,7 @@ function getUser(token) {
   }
 }
 
-module.exports = {
+export {
   setUser,
   getUser,
 };
