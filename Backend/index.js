@@ -1,4 +1,4 @@
-
+import cors from "cors"
 import cookieParser from "cookie-parser";
 import express from "express";
 import { connectToMongoDB } from "./connect.js";
@@ -15,11 +15,12 @@ connectToMongoDB(`${process.env.DB_URL}/${DB_NAME}`).then(() =>
 );
 
 //middlewares
-
+app.use(cors())
 app.use(express.json()); //middleware
 app.use(express.urlencoded({ extended: false })); //middleware
 app.use(cookieParser());
 app.use(checkForAuthentication); //this will run everytime
+
 
 //route
 import staticRoute from "./routes/staticRouter.js";
