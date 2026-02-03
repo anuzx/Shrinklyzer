@@ -35,14 +35,17 @@ async function handleUserLogin(req, res) {
       error: "Invalid Username or Password",
     });
 
-  const token = setUser(user); 
+  const token = setUser(user);
 
-  res.cookie("token", token , {httpOnly:true});
+  res.cookie("token", token, {
+    httpOnly: true,
+    sameSite: "lax"
+  });
 
   return res.status(201).json({
     message: "signin successfull",
-    token: token
-  })
+    token: token,
+  });
 }
 
 export { handleUserSignup, handleUserLogin };

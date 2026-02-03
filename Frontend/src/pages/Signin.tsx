@@ -9,9 +9,7 @@ export function Signin() {
   const navigate = useNavigate();
   const { mutate:handleSignin } = useMutation({
     mutationFn: signIn,
-    onSuccess: (data) => {
-      const token = data.token;
-      localStorage.setItem("token", token);
+    onSuccess: () => {
       navigate("/dashboard");
       },
       onError: () => {

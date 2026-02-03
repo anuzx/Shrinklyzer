@@ -25,6 +25,8 @@ export async function signUp(data: SignUpPayload) {
 }
 
 export async function signIn(data: SignInPayload): Promise<SignInResponse> {
-  const response = await axios.post(`${BACKEND_URL}/api/v1/user/signin`, data);
+  const response = await axios.post(`${BACKEND_URL}/api/v1/user/signin`, data, {
+    withCredentials: true,
+  });
   return response.data;
 }

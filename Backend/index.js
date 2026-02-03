@@ -15,7 +15,8 @@ connectToMongoDB(`${process.env.DB_URL}/${DB_NAME}`).then(() =>
 );
 
 //middlewares
-app.use(cors())
+app.use(cors({origin: "http://localhost:5173",
+    credentials: true,}))
 app.use(express.json()); //middleware
 app.use(express.urlencoded({ extended: false })); //middleware
 app.use(cookieParser());
