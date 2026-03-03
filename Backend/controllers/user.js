@@ -1,16 +1,18 @@
 import { User } from "../models/user.js";
 import { setUser } from "../service/auth.js";
+import { ApiError } from "../utils/ApiError.js";
+import { SigninSchema, SingupSchema } from "../validator/schema.js";
 
 //signup
 
 async function handleUserSignup(req, res) {
-  const { name, email, password } = req.body;
+  const parsedData = SingupSchema.safeParse(req.body)
 
-  if (password.length < 6) {
-    return res.json({
-      message: "not a valid password ",
-    });
+  if (!parsedData.success) {
+    throw new ApiError(400, "INVALID_REQUEST")
   }
+
+  const { email, password, name } = parsedData.data
 
   await User.create({
     name,
@@ -25,7 +27,14 @@ async function handleUserSignup(req, res) {
 //login
 
 async function handleUserLogin(req, res) {
-  const { email, password } = req.body;
+  const parsedData = SigninSchema.safeParse(req.body)
+
+  if (!parsedData.success) {
+    throw new ApiError(400, "INVALID_REQUEST")
+  }
+
+  const { email, password } = parsedData.data
+
   const user = await User.findOne({
     email,
     password,
