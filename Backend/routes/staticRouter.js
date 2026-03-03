@@ -1,12 +1,12 @@
 import express from "express";
 const router = express.Router();
 
-import {URL} from "../models/url.js";
+import { URL } from "../models/url.js";
 import { restrictTo } from "../middlewares/auth.js";
 
 
-router.get("/admin/urls", restrictTo(['ADMIN']) , async (req, res) => {
-  
+router.get("/admin/urls", restrictTo(['ADMIN']), async (req, res) => {
+
   const allurls = await URL.find({});
   return res.render("home", {
     urls: allurls,
@@ -14,8 +14,8 @@ router.get("/admin/urls", restrictTo(['ADMIN']) , async (req, res) => {
 });
 
 
-router.get("/", restrictTo(['NORMAL' , 'ADMIN']) , async (req, res) => {
-  
+router.get("/", restrictTo(['NORMAL', 'ADMIN']), async (req, res) => {
+
   const allurls = await URL.find({ createdBy: req.user._id });
   return res.render("home", {
     urls: allurls,
@@ -23,12 +23,5 @@ router.get("/", restrictTo(['NORMAL' , 'ADMIN']) , async (req, res) => {
 });
 
 
-router.get("/signup", (req, res) => {
-  return res.render("signup");
-});
-
-router.get("/login", (req, res) => {
-  return res.render("login");
-});
 
 export default router;

@@ -1,6 +1,7 @@
 import { getUser } from "../service/auth.js";
+import { ApiError } from "../utils/ApiError.js";
 
-function checkForAuthentication(req, res, next) {
+function checkForAuthentication(req, _res, next) {
   const tokenCookie = req.cookies?.token;
   req.user = null;
   if (!tokenCookie) return next();
@@ -13,10 +14,14 @@ function checkForAuthentication(req, res, next) {
 }
 
 function restrictTo(roles) {
-  return function (req, res, next) {
-    if (!req.user) return res.redirect("/login");
+  return function(req, res, next) {
+    if (!req.user) {
+      throw new ApiError(400, "user not verified")
+    };
 
-    if (!roles.includes(req.user.role)) return res.end("unauthorized");
+    if (!roles.includes(req.user.role)) {
+      throw new ApiError(403, "unauthorized")
+    };
 
     return next();
   };

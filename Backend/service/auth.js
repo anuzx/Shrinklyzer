@@ -4,7 +4,7 @@ dotenv.config();
 import jwt from "jsonwebtoken";
 const SECRET = process.env.JWT_SECRET;
 
-function setUser(user) {
+export const setUser = (user) => {
   if (!SECRET) {
     throw new Error("JWT_SECRET is not defined");
   }
@@ -22,7 +22,7 @@ function setUser(user) {
   }
 }
 
-function getUser(token) {
+export const getUser = (token) => {
   if (!token) return null;
   try {
     return jwt.verify(token, SECRET);
@@ -31,4 +31,3 @@ function getUser(token) {
   }
 }
 
-export { setUser, getUser };
